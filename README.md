@@ -71,3 +71,13 @@ query {
   }
 }
 ```
+
+```graphql
+mutation {
+  addCategory(input: {
+    name: "My Category"
+  }) {
+    name id
+  }
+}
+```
