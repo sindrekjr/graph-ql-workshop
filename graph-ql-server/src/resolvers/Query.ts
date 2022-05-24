@@ -1,3 +1,4 @@
 export const Query = {
-  hello: () => 'World!'
+  hello: (parent, args, context) => 'World!',
+  categories: (parent, args, { db }) => db.categories,
 }
