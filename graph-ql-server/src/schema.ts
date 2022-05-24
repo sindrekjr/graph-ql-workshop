@@ -9,6 +9,14 @@ export const typeDefs = gql`
     product(id: ID!): Product
   }
 
+  type Mutation {
+    addCategory(input: AddCategoryInput): Category
+  }
+
+  input AddCategoryInput {
+    name: String!
+  }
+
   type Category {
     id: ID!
     name: String!
