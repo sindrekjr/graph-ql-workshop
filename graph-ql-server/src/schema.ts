@@ -25,4 +25,13 @@ export const typeDefs = gql`
     onSale: Boolean!
     reviews: [Review!]!
   }
+
+  type Review {
+    id: ID!
+    date: String!
+    title: String!
+    comment: String!
+    rating: Int!
+    productId: ID!
+  }
 `;
