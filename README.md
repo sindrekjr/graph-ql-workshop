@@ -1,8 +1,12 @@
-# graph-ql-workshop
+# GraphQL Workshop
 
-## How do
+## Requirements
 
-Install and run.
+- [Node.js](https://nodejs.org/)
+
+## Usage
+
+#### 1. Install and run
 
 ```bash
 $ cd graph-ql-server
@@ -10,7 +14,8 @@ $ npm install
 $ npm run start:dev
 ```
 
-Go to http://localhost:4000 and play around. Example queries below.
+#### 2. Go to http://localhost:4000 and play around
+Example queries below.
 
 ```graphql
 query {
