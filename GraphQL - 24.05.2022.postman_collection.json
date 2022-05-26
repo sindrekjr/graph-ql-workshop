@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "3ca3bca0-a770-417a-b726-67e1b747e108",
+		"name": "GraphQL - 24.05.2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9424428"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "All Categories w/ Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  categories {\r\n    id\r\n    products {\r\n      name\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Category w/ products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  category(id: \"c01b1ff4-f894-4ef2-b27a-22aacc2fca70\") {\r\n    id\r\n    products {\r\n      name\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  addCategory(input: {\r\n    name: \"My Category\"\r\n  }) {\r\n    name id\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "All Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  products {\r\n    name id description\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Products w/ Reviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  products {\r\n    reviews {\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  product(id: \"c2af9adc-d0b8-4d44-871f-cef66f86f7f6\") {\r\n    name\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Product w/ Reviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\r\n  product(id: \"2c931e7e-510f-49e5-aed6-d6b44087e5a1\") {\r\n    reviews {\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}",
+							"host": [
+								"{{HOST}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:4000",
+			"type": "string"
+		}
+	]
+}
